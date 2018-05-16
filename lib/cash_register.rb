@@ -10,9 +10,7 @@ class CashRegister
   end
 
   def add_item(title, price, quantity=1)
-    (0...quantity).each do |x|
-      self.items.push(title)
-    end
+    (0...quantity).each do { |x| self.items.push(title) }
     self.transactions.push(price*quantity)
     self.total += price*quantity
   end
