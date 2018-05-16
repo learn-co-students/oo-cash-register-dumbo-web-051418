@@ -8,7 +8,7 @@ class CashRegister
     @item_list = []
   end
 
-  def add_item(title, price, quantity = nil)
+  def add_item(title, price, quantity = 1)
 
     if quantity
       @total += price * quantity
@@ -18,11 +18,7 @@ class CashRegister
       @last_trans_amount = price
     end
 
-    if quantity != nil
-      quantity.times do |item|
-        @item_list << title
-      end
-    else
+    quantity.times do |item|
       @item_list << title
     end
   end
